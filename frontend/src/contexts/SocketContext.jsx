@@ -12,7 +12,7 @@ export function SocketProvider({ children }) {
   useEffect(() => {
     if (!user) return;
 
-    const s = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000', {
+    const s = io(import.meta.env.VITE_SOCKET_URL || 'https://chat-app-8d5r.onrender.com', {
       auth: { token: localStorage.getItem('token') },
       transports: ['websocket']
     });
