@@ -1,7 +1,13 @@
+const path = require('path');
+const fs = require('fs');
+const Database = require('better-sqlite3');
+const schema = require('../db/schema');
+
+let db = null;
+
 function getDb() {
   if (db) return db;
 
-  // ✅ Use /tmp in production (Render safe)
   const dbPath = process.env.NODE_ENV === 'production'
     ? path.join('/tmp', 'chat.db')
     : path.resolve('./chat.db');
@@ -25,4 +31,5 @@ function getDb() {
   console.log(`[db] Connected to SQLite at ${dbPath}`);
   return db;
 }
+
 module.exports = { getDb };
