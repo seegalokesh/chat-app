@@ -25,3 +25,4 @@ function getDb() {
   console.log(`[db] Connected to SQLite at ${dbPath}`);
   return db;
 }
+module.exports = { getDb };
