@@ -8,7 +8,21 @@ const registerTypingHandlers = require('./handlers/typingHandler');
 function initSocket(httpServer) {
   const io = new Server(httpServer, {
     cors: {
-      origin: process.env.CLIENT_URL,
+      origin: function(origin, callback) {
+        const allowedOrigins = [
+          process.env.CLIENT_URL,
+          'https://chat-app-git-main-seegalokeshs-projects.vercel.app',
+          'https://chat-jiek3xamk-seegalokeshs-projects.vercel.app',
+          'http://localhost:5173',
+          'http://localhost:3000'
+        ].filter(Boolean);
+        
+        if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+        } else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      },
       methods: ['GET', 'POST'],
       credentials: true
     }
