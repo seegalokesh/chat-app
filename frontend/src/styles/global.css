@@ -299,6 +299,430 @@ body {
   font-weight: 500;
   cursor: pointer;
 }
+
+/* ========== MOBILE RESPONSIVE ========== */
+
+/* Tablets and smaller (max 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-w: 220px;
+  }
+}
+
+/* Mobile devices (max 768px) */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-w: 100%;
+  }
+
+  body {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .app-layout {
+    height: 100dvh;
+    flex-direction: column;
+  }
+
+  /* Sidebar becomes full-width header */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .sidebar-header {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .sidebar-search {
+    padding: 8px;
+    flex: 1;
+    min-width: 0;
+    position: relative;
+  }
+
+  .sidebar-search input {
+    padding: 6px 10px;
+    font-size: 14px;
+    /* Prevent zoom on focus */
+    font-size: 16px !important;
+  }
+
+  .search-results {
+    max-height: 300px;
+    overflow-y: auto;
+    position: fixed;
+    width: calc(100% - 20px);
+    left: 10px;
+    right: 10px;
+    top: auto;
+    bottom: auto;
+    z-index: 1000;
+  }
+
+  .sidebar-tabs {
+    padding: 0 8px;
+    gap: 2px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    padding: 6px;
+    font-size: 12px;
+    min-width: fit-content;
+  }
+
+  .sidebar-footer {
+    padding: 8px;
+    border-top: none;
+    border-left: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  /* Hide room/dm lists on mobile */
+  .room-list,
+  .dm-list {
+    display: none;
+  }
+
+  /* Chat window adjustments */
+  .chat-window {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .chat-header {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  .chat-messages-panel {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .message-list {
+    padding: 12px 8px;
+    gap: 2px;
+  }
+
+  .message-item {
+    padding: 4px 6px;
+    gap: 8px;
+  }
+
+  .message-author {
+    font-size: 13px;
+  }
+
+  .message-content {
+    font-size: 13px;
+  }
+
+  .message-input {
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .message-input textarea {
+    padding: 8px 10px;
+    font-size: 16px !important;
+    max-height: 120px;
+  }
+
+  /* Hide user list on mobile */
+  .user-list {
+    display: none;
+  }
+
+  /* Auth card responsive */
+  .auth-card {
+    width: calc(100% - 32px);
+    max-width: 380px;
+    padding: 32px 24px;
+  }
+
+  .auth-card h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form-group input {
+    padding: 12px;
+    font-size: 16px !important;
+  }
+
+  /* Modal responsive */
+  .modal {
+    width: calc(100% - 32px);
+    max-width: 440px;
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-header h2 {
+    font-size: 16px;
+  }
+
+  .modal-actions {
+    margin-top: 16px;
+  }
+
+  /* Toast responsive */
+  .toast-container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+  }
+
+  .toast {
+    min-width: auto;
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+
+  /* Buttons responsive */
+  .btn {
+    padding: 10px 14px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+
+  .btn-sm {
+    min-height: 36px;
+    padding: 6px 12px;
+  }
+
+  .send-btn {
+    min-height: 40px;
+    padding: 8px 16px;
+  }
+
+  .action-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+    min-height: 32px;
+  }
+
+  /* Message actions better positioning */
+  .message-actions {
+    position: static;
+    display: flex !important;
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  /* Connection badge responsive */
+  .connection-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  /* Avatar sizing for mobile */
+  .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+}
+
+/* Small phones (max 480px) */
+@media (max-width: 480px) {
+  :root {
+    --radius: 6px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .app-layout {
+    height: 100dvh;
+  }
+
+  .sidebar {
+    height: auto;
+    padding: 0;
+  }
+
+  .sidebar-header {
+    padding: 10px 12px;
+    font-size: 13px;
+    min-width: fit-content;
+  }
+
+  .sidebar-search {
+    padding: 6px;
+    flex: 1;
+  }
+
+  .sidebar-search input {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .sidebar-tabs {
+    padding: 0 4px;
+    gap: 0;
+  }
+
+  .tab {
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+
+  .sidebar-footer {
+    padding: 6px;
+  }
+
+  .chat-header {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .message-list {
+    padding: 8px 6px;
+  }
+
+  .message-item {
+    padding: 3px 4px;
+    gap: 6px;
+  }
+
+  .message-author {
+    font-size: 12px;
+  }
+
+  .message-time,
+  .message-edited {
+    font-size: 10px;
+  }
+
+  .message-content {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .message-input {
+    gap: 4px;
+    padding: 8px 10px;
+  }
+
+  .message-input textarea {
+    padding: 8px 10px;
+    font-size: 14px;
+    max-height: 100px;
+  }
+
+  .auth-card {
+    width: calc(100% - 24px);
+    padding: 24px 16px;
+  }
+
+  .auth-card h1 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .form-group input {
+    padding: 11px 10px;
+    font-size: 16px;
+  }
+
+  .modal {
+    width: calc(100% - 24px);
+    padding: 18px;
+  }
+
+  .modal-header h2 {
+    font-size: 15px;
+  }
+
+  .btn {
+    padding: 11px 12px;
+    font-size: 13px;
+    min-height: 44px;
+  }
+
+  .btn-sm {
+    min-height: 36px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .send-btn {
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  /* Toast stack better on small screens */
+  .toast-container {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+  }
+
+  .toast {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  /* Better typing indicator */
+  .typing-indicator {
+    padding: 3px 6px;
+    height: 24px;
+  }
+
+  .typing-text {
+    font-size: 11px;
+  }
+
+  .typing-dots span {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Better user item on mobile */
+  .user-item-btn {
+    padding: 8px 6px;
+  }
+
+  .user-item-avatar {
+    flex-shrink: 0;
+  }
+
+  .user-item-name {
+    font-size: 12px;
+  }
+
+  .user-item-you,
+  .user-item-status-text {
+    font-size: 10px;
+  }
+}
+
 .mention:hover { background: rgba(88, 101, 242, 0.25); }
 
 .inline-code {
