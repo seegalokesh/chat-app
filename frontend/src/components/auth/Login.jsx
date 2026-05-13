@@ -16,6 +16,8 @@ export default function Login() {
     e.preventDefault();
     setError('');
     setLoading(true);
+    console.log('submitting', email, password);        // ← add this
+    console.log('login fn:', login);  
     try {
       await login(email, password);
       addNotification('Welcome back!', 'success');
